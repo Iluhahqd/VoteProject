@@ -1,0 +1,37 @@
+from django.shortcuts import render
+import datetime
+
+def start_page(request):
+    context = {}
+    context['date'] = datetime.datetime.now().strftime('%Y.%m.%d')
+    context['author'] = 'ОПАГЭИ'
+    return render(request, 'start.html', context)
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+<h1>Меню:</h1>
+<ol>
+    <li> <a href = ''> Создание голосования </a> </li>
+    <li> <a href = ''> Просмотр голосования </a> </li>
+    <li> <a href = ''> Редактирование голосования </a> </li>
+    <li> <a href = ''> Добавление нового варианта в голосование </a>  </li>
+    <li> <a href = ''> Редактирование варианта голосования  </a> </li>
+    <li> <a href = ''> Просмотр вариантов голосования(можно проголосовать) </a> </li>
+    <li> <a href = ''> Просмотр результата голосования </a>  </li>
+
+</ol>
+<h2>Приветствуем!</h2>
+<ul>
+    <li>Рады показать вам проект votes, созданный командой {{author}}</li>
+    <li>сегодняшняя дата: {{date}}</li>
+</ul>
+
+</body>
+</html>
